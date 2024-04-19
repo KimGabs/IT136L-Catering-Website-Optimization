@@ -180,8 +180,11 @@
 				
 				// Retrieves all products based on category
 				else if(isset($_GET['category'])){
-					if(($_GET['category']) == ""){
+					if((empty($_GET['category']))){
 						$sql = "SELECT * FROM products WHERE prodStatus='active' LIMIT $start_index, $results_per_page";
+						// $url = "menu.php?category="; // the URL with an empty get
+						// $path = parse_url($url, PHP_URL_PATH); // the path of the URL without the query string
+						// header("Location: $path"); // redirect the user to the path
 					}
 					else{
 						$category = $_GET['category'];
@@ -380,20 +383,26 @@
 				// mysqli_close($conn);
 			?>
 		</div>
-
 		  <!-- Pagination -->
 		  <ul class="pagination">
 		  <?php
+
 				// Calculate the total number of pages
-				$sql_count = "SELECT COUNT(*) AS total FROM products;";
+				$sql_count = "SELECT COUNT(*) AS total FROM products WHERE prodStatus='active';";
 				if(isset($_GET['category'])){
+					$category = $_GET['category'];
 					$sql_count = "SELECT COUNT(*) AS total FROM products WHERE prodCat='$category' AND prodStatus='active';";
+				}
+				if(empty($_GET['category'])){
+					$sql_count = "SELECT COUNT(*) AS total FROM products WHERE prodStatus='active';";
 				}
 
 				$result_count = mysqli_query($conn, $sql_count);
-				if (!$result_count) {
+				
+				// Error handler: If no results is found.
+				if(!$result_count) {
 					die("Error: " . mysqli_error($conn)); 
-				}    
+				}   
 
 				$row_count = mysqli_fetch_assoc($result_count);
 				$total_pages = ceil($row_count['total'] / $results_per_page);
@@ -401,13 +410,16 @@
 				// Get the sorting parameter if it exists
 				$sortParam = isset($_GET['sort']) ? '&sort=' . $_GET['sort'] : '';
 
-				// Display pagination links with sorting parameter
-				for ($i = 1; $i <= $total_pages; $i++) {
-					echo "<li class='page-item" . ($i == $current_page ? ' active' : '') . "'>";
-					echo "<a class='page-link' href='?page=$i$sortParam'>$i</a>";
-					echo "</li>";
+				// Hide pagination if total pages is only 1.
+				if($total_pages != 1){
+					// Display pagination links with sorting parameter
+					for($i = 1; $i <= $total_pages; $i++) {
+						echo "<li class='page-item" . ($i == $current_page ? ' active' : '') . "'>";
+						echo "<a class='page-link' href='?page=$i$sortParam'>$i</a>";
+						echo "</li>";
+					}
 				}
-				mysqli_close($conn);
+				mysqli_close($conn);	
 			?>
 
 			</ul>
