@@ -16,3 +16,4 @@
     - When main logic is added, test for bugs
     - White box test included
     - For Enzo and Joey
+        - JOEY PLS TEST FOR ME, BECAUSE I CANT RUN THE FILES THEMSELVES
