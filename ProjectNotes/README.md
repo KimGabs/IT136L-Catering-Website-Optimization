@@ -10,6 +10,10 @@ Old show order sql query:
 New query for show orders:
 "SELECT * FROM orders WHERE orderStatus != 'cancelled' ORDER BY orderDate DESC LIMIT $start_index, $results_per_page";
 ```
+```
+Query for show orders in archives:
+“SELECT * FROM orders WHERE orderStatus = 'cancelled' ORDER BY orderDate DESC LIMIT $start_index, $results_per_page"
+```
 ## Codebase
 - added `archive.php`
 - TO ADD
