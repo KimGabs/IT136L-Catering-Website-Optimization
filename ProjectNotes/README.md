@@ -2,8 +2,14 @@
 
 ## Database related
 - SQL queries for order
-    ```SELECT * FROM ORDERS ORDERBY DATE WHERE``` 
-
+```
+Old show order sql query:
+"SELECT * FROM orders ORDER BY orderDate DESC LIMIT $start_index, $results_per_page";
+```
+```
+New query for show orders:
+"SELECT * FROM orders WHERE orderStatus != 'cancelled' ORDER BY orderDate DESC LIMIT $start_index, $results_per_page";
+```
 ## Codebase
 - added `archive.php`
 - TO ADD
