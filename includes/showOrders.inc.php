@@ -49,7 +49,7 @@
 								echo "<option value='completed' selected='selected'>Completed</option>";
 							}else{echo "<option value='completed'>Completed</option>";}
 							if ($row['orderStatus'] == 'cancelled'){
-								echo "<option value='cancelled' selected='selected'>Cancelled</option>";
+								echo "<option value='cancelled' selected='selected'>Cancelled</option>"; //if this is selected, push order to archive and delete from main manageOrders page
 							}else{echo "<option value='cancelled'>Cancelled</option>";}
 							echo "</select>";
 							echo "<input type='hidden' form='orderStatus' name='orderId[]' value=" . $row["orderId"] . ">";
