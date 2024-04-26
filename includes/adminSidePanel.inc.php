@@ -52,6 +52,10 @@ echo '<div class=\'container-fluid\'>
                         <a href=\'../admin/inventory.php\' class=\'nav-link px-0 align-middle\'>
                             <i class=\'fs-4 bi-minecart\'></i> <span class=\'ms-1 d-none d-sm-inline\'>Inventory</span> </a>
                     </li>
+                    <li>
+                        <a href=\'../admin/archives.php\' class=\'nav-link px-0 align-middle\'>
+                            <i class=\'fs-4 bi-archive\'></i> <span class=\'ms-1 d-none d-sm-inline\'>Archives</span> </a>
+                    </li>
                 </ul>
             </div>
         </div>';

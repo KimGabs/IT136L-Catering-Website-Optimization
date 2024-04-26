@@ -469,15 +469,14 @@ function updateOrderInfo($conn, $orderId, $cxName, $eventDate, $eventTime, $cont
     else{ 
       // Update the product table
       $query = "UPDATE orders SET cxName=?, eventDate=?, eventTime=?, contactNo=?, eventLocation=?, request=? WHERE orderId = ?";
-      $stmt2 = $conn->prepare($query);
-      $stmt2->bind_param("ssssssi", $cxName, $eventDate, $eventTime, $contactNo, $eventLocation, $request, $orderId);
-      $stmt2->execute();
+      $stmt = $conn->prepare($query);
+      $stmt->bind_param("ssssssi", $cxName, $eventDate, $eventTime, $contactNo, $eventLocation, $request, $orderId);
+      $stmt->execute();
       header("location: ../PHP/admin/manageOrders.php?updateOrderInfo=success");
       exit();
     }
 
 }
-
 
 function emptyPkgInput($pax) {
     $result;
@@ -512,4 +511,39 @@ function formatTimestamp($dateString) {
     $time12hr = date('h:i A', $timestamp); 
 
     return array($month, $day, $year, $time12hr);
+}
+
+function archiveOrder($conn, $orderId) {
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    $cancellationTimestamp = date('Y-m-d H:i:s'); // Current date and time
+    $sql = "UPDATE orders SET date_archived = ? WHERE orderID = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('si', $cancellationTimestamp, $orderId);
+    $stmt->execute();
+}
+
+function unarchiveOrder($conn, $orderId) {
+    if(!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    $sql = "UPDATE orders SET date_archived = NULL WHERE orderID = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('i', $orderId);
+    $stmt->execute();
+
+}
+
+function autoDeleteOrders($conn) {
+    $sqlRelated = "DELETE FROM order_items WHERE orderId IN (SELECT orderId FROM orders WHERE DATEDIFF(NOW(), date_archived) > 30)";
+    if ($conn->query($sqlRelated) === FALSE) {
+        echo 'Error deleting related foreign keys: ' . $conn->error;
+    }
+
+    // Then, delete the orders
+    $sqlOrders = "DELETE FROM orders WHERE DATEDIFF(NOW(), date_archived) > 30";
+    if ($conn->query($sqlOrders) === FALSE) {
+        echo 'Error deleting orders: ' . $conn->error;
+    }
 }

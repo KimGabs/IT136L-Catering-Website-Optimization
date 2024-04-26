@@ -17,7 +17,17 @@ require_once 'functions.inc.php';
         foreach ($orderStatuses as $orderid => $status) {
             if($oldStatus = checkOrderStatusExist($conn, (int)$orderid, $status)){
                 updateOrderStatus($conn, (int)$orderid, $status, $oldStatus);
-                header("location: ../PHP/admin/manageOrders.php?Onchange=Success");
+                
+                if($status == 'cancelled'){
+                    archiveOrder($conn, (int)$orderid);
+                }
+                if($oldStatus == 'cancelled'){
+                    unarchiveOrder($conn, $orderid);
+                    header("location: ../PHP/admin/archives.php?Onchange=Success");
+                }
+                else{
+                    header("location: ../PHP/admin/manageOrders.php?Onchange=Success");
+                }
                 exit();
             }   
         }

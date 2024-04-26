@@ -25,7 +25,7 @@ body {
     margin: 0px auto; 
     font: 13px Helvetica, Arial, sans-serif; 
     display: inline-block; 
-    padding: 0 10px;
+    padding: 0 2px;
     border-bottom-right-radius: 3px;
     border-top-right-radius: 3px;
 }

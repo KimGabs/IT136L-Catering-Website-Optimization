@@ -3,12 +3,12 @@
 		require_once '../../includes/database.inc.php';
 		require_once '../../includes/functions.inc.php';
 
-
+			autoDeleteOrders($conn);
 			$results_per_page = 12; // Number of messages to display per page
 			$current_page = isset($_GET['page']) ? $_GET['page'] : 1;
 			$start_index = ($current_page - 1) * $results_per_page;
 			// query to select all columns from orders and order_items table
-			$query = "SELECT * FROM orders WHERE orderStatus != 'cancelled' ORDER BY orderDate DESC LIMIT $start_index, $results_per_page";
+			$query = "SELECT * FROM orders WHERE orderStatus='cancelled' ORDER BY orderDate DESC LIMIT $start_index, $results_per_page";
 			$result = mysqli_query($conn, $query);
 
 			// Check if any rows were returned
@@ -25,8 +25,9 @@
 					$totalP = $row['totalPrice'];
 					$dateTime = DateTime::createFromFormat('H:i', $row['eventTime']);
 					$formattedTime = $dateTime->format('g:i A');
-
-
+					$dateTimeArchived = new DateTime($row['date_archived']);
+					$dateArchived = $dateTimeArchived->format('Y-m-d'); // Gives the date
+					$timeArchived = $dateTimeArchived->format('H:i'); // Gives the time
 					echo "
 						<tbody>	
 						<tr class='accordion-toggle'>
@@ -69,15 +70,16 @@
 											<th>Contact Number</th>	
 											<th>Event Location</th>	
 											<th>Request</th>
+											<th>Date & Time Archived</th>
 										</tr>
 									</thead>	
 							<tbody>	
 								<tr data-toggle='collapse'  class='accordion-toggle'>
 									<td class='col-md-2' style='text-align: center;'>" . $date . "</td>
 									<td class='col-md-2' style='text-transform: capitalize;'>". $row['contactNo'] . "</td>	
-									<td class='col-md-3'>". $row['eventLocation'] . "</td>
-									<td class='col-md-5' style='word-wrap: break-word;min-width: 160px;max-width: 160px;line-height: 1.3em;'>" . ucfirst($row['request']) . "</td> 
-									
+									<td class='col-md-2'>". $row['eventLocation'] . "</td>
+									<td class='col-md-3' style='word-wrap: break-word;line-height: 1.3em;'>" . ucfirst($row['request']) . "</td> 
+									<td class='col-md-3'>". $dateArchived . " | " . $timeArchived . "</td>
 								</tr>
                       		</tbody>
               			</table>
@@ -214,8 +216,6 @@
 					echo "</tr>";
 				}
 			} else {
-				// If no rows were returned, print message
-				echo "<p style='text-align: center;font-weight:bold;'>No orders for now...<p>";
 			}
 
 			// close database connection
