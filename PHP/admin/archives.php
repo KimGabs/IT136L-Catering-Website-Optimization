@@ -6,7 +6,7 @@
 	<div class="col py-3" style="background-color: white;">
 		<h1>Archives</h1>
 		<div class="container p-0 mb-2">
-			<p style="font-style:italic;">Orders archived for more than <b>30 days</b> will be deleted.</p>
+			<p style="font-style:italic;">Orders archived for more than <b>5 mins</b> will be deleted.</p>
 		</div>
 		<div class="container p-0 mb-5">
 			<div class="col-md-12">
