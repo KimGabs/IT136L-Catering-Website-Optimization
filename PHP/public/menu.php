@@ -4,9 +4,9 @@
 	require_once '../../includes/database.inc.php';
 ?>
 	<main>
-	<div class="catalog-container">
-		<div class="catalog-header d-flex flex-row bd-highlight align-items-center">
-			<h1 class="p-2 bd-highlight mr-5">Menu</h1>
+	<div class="catalog-container col-11 mx-auto">
+		<div class="catalog-header d-flex flex-row bd-highlight align-items-center justify-content-between w-100">
+			<h1 class="bd-highlight mr-5">Menu</h1>
 			<div class="p-2 dropdown bd-highlight col-2">
 			<form action="menu.php" method="get" id="sortDescForm">
 					 <!-- Handles SORTING option -->
@@ -104,7 +104,7 @@
 			
 			?>
 			</div>
-			<div class="p-2 bd-highlight col-2" style="font-size: 20px;">
+			<div class="p-2 bd-highlight me-2" style="font-size: 20px;">
 				<button id="clearPackageBtn" type="button" class="btn btn-danger">Clear package</button>
 			</div>
 		</div>
@@ -220,7 +220,7 @@
 					echo '<div class="card-body">';
 					echo '<h5>' . $row["prodName"] . '</h5>';
 					echo '<p class="card-text">₱' . $row["prodPrice"] . '</p>';
-					echo '<form method="post" action="../../includes/addToPackage.inc.php">';
+					echo '<form method="post" action="../../includes/addToPackage.inc.php" class="mx-1">';
 					echo '<input type="hidden" name="prodId" value="' . $row['prodId'] . '">';
 					echo '<input id="locationElement" type="hidden" name="location" value="menu">';
 					echo '<button type="button" class="menu-btn" data-toggle="modal" data-target="#productModal' . $row["prodId"] . '">View Details</button>';

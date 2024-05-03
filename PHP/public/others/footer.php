@@ -1,11 +1,10 @@
 </body>
 <footer>
-	<div class="row footer" style="margin-top: 20px;">
-		<div class="col"><a href="aboutUs.php">About Us</a></div>
-		<div class="col"><a href="termsAndCondition.php">Terms & Condition</a></div>
-	</div>
-	<div class="row footer" style="margin-top: 10px;">
-		<div class="col"><p>&copy; CROMS Catering Services</p></div>
+	<div class="footer d-flex row justify-content-start" style="margin-top: 20px;">
+		<a href="public/others/aboutUs.php" class="link-light">About Us</a>
+		<a href="public/others/termsAndCondition.php" class="link-light">Terms & Condition</a>
+		<a href="/IT136L-Catering-Website-Optimization/PHP/public/entry/login.php" class="link-light">Login Admin</a>
+		<p class="link-light">&copy; CROMS Catering Services</p>
 	</div>
 	</footer>
 </html>
