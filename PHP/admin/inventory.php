@@ -16,7 +16,7 @@ require_once '../../includes/database.inc.php';
         <input type="number" name="quantity" required>&nbsp;&nbsp;
         <label for="">Price:</label>
         <input type="number" step="0.01" name="price" required>&nbsp;&nbsp;
-        <button class="btn btn-primary" type="submit" name="submit">Add Item</button>
+        <button class="btn btn-outline-success" type="submit" name="submit">Add Item</button>
     </form>
 </div>
 <br>
@@ -24,8 +24,8 @@ require_once '../../includes/database.inc.php';
     <form action="inventory.php" method="get">
         <label for="">Filter by Item Name:</label>
         <input type="text" name="filter_product_name"> &nbsp;
-        <button class="btn btn-warning" type="submit" name="filter_submit">Filter</button> &nbsp;
-        <button class="btn btn-primary" type="submit" name="reset_filter">Reset Filter</button>
+        <button class="btn dark-button-outline" type="submit" name="filter_submit">Filter</button> &nbsp;
+        <button class="btn btn-outline-danger" type="submit" name="reset_filter">Reset Filter</button>
     </form>
 </div>
 <br><br>
@@ -61,7 +61,7 @@ require_once '../../includes/database.inc.php';
                 echo "<td class='align-middle'>".ucfirst($row['product_name'])."</td>";
                 echo "<td class='align-middle'>".$row['quantity']."</td>";
                 echo "<td class='align-middle'>₱".number_format($row['price'], 2, '.', ',')."</td>";
-                echo '<td class="align-middle"><button type="button" class="menu-btn btn" data-toggle="modal" data-target="#itemModal' . $row["id"] . '" style="background-color: #0D98BA; color: white;">Edit Item</button></td>';
+                echo '<td class="align-middle"><button type="button" class="dark-button-outline menu-btn btn" data-toggle="modal" data-target="#itemModal' . $row["id"] . '">Edit Item</button></td>';
                 echo '<form action="../../includes/inventoryFunctions.inc.php" method="post">';
                 echo '<input type="hidden" name="id" value="' . $row["id"] . '">';
                 echo "<td class='align-middle'><button class='btn btn-danger' type='submit' name='delete' onclick='return confirm(\"Are you sure you want to delete this item?\");'>Delete</button></td>";

@@ -28,7 +28,7 @@
 					echo "
 						<tbody>	
 						<tr class='accordion-toggle'>
-							<td style='vertical-align: middle;'><button type='button' data-toggle='collapse' data-target='#product-info-" . $row["prodId"] . "' class='btn btn-others btn-xs'>Collapse</button></td>
+							<td style='vertical-align: middle;'><i type='button' data-toggle='collapse' data-target='#product-info-" . $row["prodId"] . "' class='btn-xs bi bi-plus-square fs-2'></i></td>
 							<td style='vertical-align: middle; text-align: center;'>
 								<img class='prod-mgmnt-img' src='" .$row['prodImage'] . "' alt='Product img'>
 							</td>
@@ -53,7 +53,7 @@
 
 							// END OF FORM
 							echo "</td>";
-							echo "<td style='vertical-align: middle;'><button type='button' class='btn btn-others status' data-toggle='modal' data-target='#editProduct-" . $row["prodId"] . "' data-backdrop='static' data-keyboard='false'>Edit Product</button></td>";
+							echo "<td style='vertical-align: middle;'><button type='button' class='dark-button-outline status' data-toggle='modal' data-target='#editProduct-" . $row["prodId"] . "' data-backdrop='static' data-keyboard='false'>Edit Product</button></td>";
 							echo "</tr>
 								<tr>
 									<td colspan='12' class='hiddenRow' style='background: transparent; padding: 0px;'>

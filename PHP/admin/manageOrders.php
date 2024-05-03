@@ -3,7 +3,7 @@
 	include_once '../../includes/showOrders.inc.php';
 	include_once '../../includes/adminSidePanel.inc.php';
 ?>
-	<div class="col py-3" style="background-color: white;">
+	<div class="col py-3 mx-5" style="background-color: #dfdfdf;">
 		<h1>Manage Orders</h1>
 		<div class="container p-0 mb-5">
 			<div class="col-md-12">

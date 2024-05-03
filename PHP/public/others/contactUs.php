@@ -26,7 +26,7 @@
 		header("location: contactUs.php?inquiry=success");
 	}
 ?>	
-	<main>
+	<main style="background-color: #dadada;">
 		<section class="contact-us-box">
                 <div class="contact-us-box-header"> 
                     <h1> Contact Us </h1>

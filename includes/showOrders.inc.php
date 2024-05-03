@@ -30,7 +30,7 @@
 					echo "
 						<tbody>	
 						<tr class='accordion-toggle'>
-							<td style='vertical-align: middle;'><button type='button' data-toggle='collapse' data-target='#order-info-" . $row["orderId"] . "' class='btn btn-others btn-xs btn-collapse'>Collapse</button></td>
+							<td style='vertical-align: middle;'><i data-toggle='collapse' data-target='#order-info-" . $row["orderId"] . "' class='btn-xs btn-collapse bi bi-plus-square fs-2' ></i></td>
 							<td style='vertical-align: middle;text-align: center;'>" . $row["orderId"] . "</td>
 							<td style='vertical-align: middle;'>" . $row["cxName"] . "</td>
 							<td style='vertical-align: middle;'>" . $row["eventDate"] . "</td>
@@ -56,8 +56,8 @@
 
 							// END OF FORM
 							echo "</td>";
-							echo "<td><button type='button' class='btn btn-secondary status' data-toggle='modal' data-target='#myModal" . $row["orderId"] . "'>View Details</button></td>";
-							echo "<td><button type='button' class='btn btn-others status' data-toggle='modal' data-target='#editOrder-" . $row["orderId"] . "'>Edit Order</button></td>";
+							echo "<td><button type='button' class='btn dark-button status' data-toggle='modal' data-target='#myModal" . $row["orderId"] . "'>View Details</button></td>";
+							echo "<td><button type='button' class='btn dark-button-outline status' data-toggle='modal' data-target='#editOrder-" . $row["orderId"] . "'>Edit Order</button></td>";
 							echo "</tr>
 								<tr>
 									<td colspan='12' class='hiddenRow' style='background: transparent; padding: 0px;'>

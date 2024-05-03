@@ -3,7 +3,7 @@
     include_once '../../includes/adminSidePanel.inc.php';
 ?>
 	<main>
-		<div class="add-product-form">
+		<div class="add-product-form content ">
             <h1>Add Product</h1>
                 <form action="../../includes/addProduct.inc.php" method="POST" enctype="multipart/form-data">
                     <div class="add-product-form-left">

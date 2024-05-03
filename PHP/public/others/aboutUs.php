@@ -1,7 +1,7 @@
 <?php
 	include_once 'header.php';
 ?>
-	<main>
+	<main style="background-color: #dadada;">
 		<section class="about-us-box">
                 <div class="about-us-box-header"> 
                     <h1> About Us </h1>

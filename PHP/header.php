@@ -37,7 +37,7 @@
 		</button>
 		<!-- Cart icon -->
 		
-		<div class="collapse navbar-collapse" id="navbarNav">
+		<div class="collapse navbar-collapse px-5" id="navbarNav">
 			<div class="col-10 d-flex justify-content-center">
 				<ul class="navbar-nav mx-auto">
 					<li class="nav-item">
@@ -63,11 +63,11 @@
 					</li>
 				</ul>
 			</div>
-			<div class="nav-link-cart col-4 d-md-block cart-icon-container">
+			<div class="nav-link-cart col-2 cart-icon-container d-flex justify-content-end">
 				<?php
 					if(!isset($_SESSION['userid'])){
-						echo "<a class='mr-3' href='public/cart.php'><img src='../img/cart.png' alt='My Cart' class='cart-icon'></a>";
-						echo "<a href='public/entry/login.php'><button type='button' class='btn btn-primary login-btn'>Login Admin</button></a>";
+						echo "<a class=' ms-auto me-4' href='public/cart.php'><i class='bi bi-cart3 text-light fs-1'></i></a>";
+						// echo "<a href='public/entry/login.php'><button type='button' class='btn btn-primary login-btn'>Login Admin</button></a>";
 					}
 					else{
 						echo "<div class='dropdown my-1'>";

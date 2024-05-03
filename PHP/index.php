@@ -72,10 +72,10 @@ require_once '../includes/database.inc.php';
          </div><!--testimonial-text-->
       </div><!--testi-text-row-->
       <div class="row name-small-row" style="margin: 0 auto;">
-         <div class="col-md-6 col-sm-12 name-small"><a href="http://ericwoneditor.com">Mark N. / Film Director</a></div>
-         <div class="col-md-6 col-sm-12 image-cont-1">
-            <div class="thumb thumb1"> </div>
-         </div>
+	  	<a href="http://ericwoneditor.com" class="d-flex column justify-content-between w-100 align-items-center link-light fw-bold">
+	  		Mark N. / Film Director
+			<div class="thumb thumb1"> </div>
+		</a>
       </div><!---name-small-row-->
    </div><!---Testi-container-1-->
      <div class="col-md-4 col-sm-12 testi-container-1">
@@ -88,10 +88,10 @@ require_once '../includes/database.inc.php';
          </div><!--testimonial-text-->
       </div><!--testi-text-row-->
       <div class="row name-small-row" style="margin: 0 auto;">
-         <div class="col-md-6 col-sm-12 name-small"><a href="http://bleuestudio.com">Sol Cano / Teacher</a></div>
-         <div class="col-md-6 col-sm-12 image-cont-1">
-            <div class="thumb thumb2"> </div>
-         </div>
+		<a href="http://bleuestudio.com" class="d-flex column justify-content-between w-100 align-items-center link-light fw-bold">
+			Sol Cano / Teacher
+			<div class="thumb thumb2"> </div>
+		</a>
       </div><!---name-small-row-->
    </div><!---Testi-container-1-->
      <div class="col-md-4 col-sm-12 testi-container-1">
@@ -104,10 +104,10 @@ require_once '../includes/database.inc.php';
 		</div><!--testimonial-text-->
       </div><!--testi-text-row-->
       <div class="row name-small-row" style="margin: 0 auto;">
-         <div class="col-md-6 col-sm-12 name-small"><a href="https://www.galzivfilm.com/">Gal Ziv / CEO</a></div>
-         <div class="col-md-6 col-sm-12 image-cont-1">
-            <div class="thumb thumb3"> </div>
-         </div>
+	  	<a href="https://www.galzivfilm.com/" class="d-flex column justify-content-between w-100 align-items-center link-light fw-bold">
+	  		Gal Ziv / CEO
+			<div class="thumb thumb3"> </div>
+		</a>
       </div><!---name-small-row-->
    </div><!---Testi-container-1-->
 </div><!---Row--->
