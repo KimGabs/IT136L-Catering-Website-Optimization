@@ -85,7 +85,7 @@
 						echo "<a class='mr-3' href='cart.php'> <i class='bi bi-cart3 text-light fs-1'></i></a>";
 					}
 					else{
-						echo "<div class='dropdown my-1'>";
+						echo "<div class='dropdown my-1' style='width: 12em;'>";
 						echo "<img class='profile-pic' src='../../img/logo-1.png' alt='Profile Picture' style='width:45px;height:auto;'>";
 						echo "<span class='ml-2' style='color:white;font-weight:bold'>CROMS Catering</span>";
 						echo "<div class='dropdown-content'>";

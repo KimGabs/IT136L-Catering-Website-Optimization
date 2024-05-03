@@ -5,6 +5,16 @@
   }
 }
 
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #ffd03a;
+    border-color: #ffd03a;
+}
+.page-link {
+  color: #000000;
+}
+
 h2 {
     font-size: 20px;
     }
@@ -60,10 +70,10 @@ h2 {
       background: transparent !important;
       }
     .custom-table .btn-others{
-      background-color:#0D98BA;
+      background-color:#797979;
       color: white;
     }.custom-table .btn-others:hover{
-      background-color:#17b7df;
+      background-color: #676767;
       color: white;
     }
   

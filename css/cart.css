@@ -140,7 +140,7 @@
       color:transparent;
 }
 #cart .btn{
-    background-color: #13a498;
+    background-color: #888888;
     border-color: #000;
     color: white;
     width: 100%;
@@ -158,7 +158,7 @@
     transition: none; 
 }
 #cart .btn:hover{
-    background-color: #16cbbc;
+    background-color: #626262;
     color: white;
 }
 

@@ -100,7 +100,7 @@
 				$package = [];
 			}
 			$numElements = count($package);
-			echo '<button id="pkgbButton" type="button" class="btn pkg-btn" data-toggle="modal" data-target="#pkgModal"> My Package ('. $numElements .')</button>';
+			echo '<button id="pkgbButton" type="button" class="btn pkg-btn" data-toggle="modal" data-target="#pkgModal" style="background-color: #797979; color: white;"> My Package ('. $numElements .')</button>';
 			
 			?>
 			</div>
