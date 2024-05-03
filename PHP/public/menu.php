@@ -105,7 +105,7 @@
 			?>
 			</div>
 			<div class="p-2 bd-highlight me-2" style="font-size: 20px;">
-				<button id="clearPackageBtn" type="button" class="btn btn-danger">Clear package</button>
+				<button id="clearPackageBtn" type="button" class="btn btn-clear" style="background-color: #d64848; color: white;">Clear package</button>
 			</div>
 		</div>
 		

@@ -115,7 +115,12 @@ function summary($conn, $userID){
         echo "</div>";
         echo "<div class='row' style='margin-top: 1em'>";
         echo "<div class='col'>TOTAL PRICE</div>";
-        echo "<div class='col text-right'>₱" . number_format((float)$_SESSION['totalPrice'], 2, '.', ',') . "</div>";
+        if(array_key_exists('totalPrice', $_SESSION)){
+            echo "<div class='col text-right'>₱" . number_format((float)$_SESSION['totalPrice'], 2, '.', ',') . "</div>";
+        }
+        else{
+            echo "<div class='col text-right'>₱0.00</div>";
+        }
         echo "</div>";
         echo "<button type='button' name='checkout' onclick='submitOrder()' class='btn' style='border-radius: 8px;'>SUBMIT</button>";
     

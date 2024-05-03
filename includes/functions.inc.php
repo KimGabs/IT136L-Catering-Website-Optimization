@@ -540,13 +540,13 @@ function unarchiveOrder($conn, $orderId) {
 
 function autoDeleteOrders($conn) {
     // First, delete foreign keys related to the archived orders.
-    $del_order_items = "DELETE FROM order_items WHERE orderId IN (SELECT orderId FROM orders WHERE TIMESTAMPDIFF(MINUTE, date_archived, NOW()) >= 5)";
+    $del_order_items = "DELETE FROM order_items WHERE orderId IN (SELECT orderId FROM orders WHERE TIMESTAMPDIFF(MINUTE, date_archived, NOW()) >= 1)";
     if ($conn->query($del_order_items) === FALSE) {
         echo 'Error deleting related foreign keys: ' . $conn->error;
     }
 
     // Then, delete the orders.
-    $del_archived_orders = "DELETE FROM orders WHERE TIMESTAMPDIFF(MINUTE, date_archived, NOW()) >= 5";
+    $del_archived_orders = "DELETE FROM orders WHERE TIMESTAMPDIFF(MINUTE, date_archived, NOW()) >= 1";
     if ($conn->query($del_archived_orders) === FALSE) {
         echo 'Error deleting orders: ' . $conn->error;
     }

@@ -86,6 +86,7 @@
         				</tr>";
 
 					// Modal for view package details
+					
 					$orderId = $row["orderId"];
 					$sql2 = "SELECT oi.*, p.* 
 							FROM order_items oi 
@@ -120,22 +121,23 @@
 					</div>
 						$rows
 					</div>";
-					$modal = '<div class="modal fade" id="myModal' . $row["orderId"] . '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="modal-dialog" style="min-width: 1100px!important;">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h3 class="modal-title" id="myModalLabel" style="margin: 0">Order Details</h3>
-									<button type="button" class="close-modal" data-dismiss="modal" aria-hidden="true" style="border: none;background-color: transparent;">×</button>
-								</div>
-								<div class="modal-body" style="padding-bottom:0px;">
-									' . $table . '
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn col-12" data-dismiss="modal" style="color: white; background-color: #212529">Close</button>
-								</div>
-							</div>
-						</div>
-					</div>';
+					$modal = '';
+					// 	$modal = '<div class="modal fade" id="myModal' . $row["orderId"] . '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					// 	<div class="modal-dialog" style="min-width: 1100px!important;">
+					// 		<div class="modal-content">
+					// 			<div class="modal-header">
+					// 				<h3 class="modal-title" id="myModalLabel" style="margin: 0">Order Details</h3>
+					// 				<button type="button" class="close-modal" data-dismiss="modal" aria-hidden="true" style="border: none;background-color: transparent;">×</button>
+					// 			</div>
+					// 			<div class="modal-body" style="padding-bottom:0px;">
+					// 				' . $table . '
+					// 			</div>
+					// 			<div class="modal-footer">
+					// 				<button type="button" class="btn col-12" data-dismiss="modal" style="color: white; background-color: #212529">Close</button>
+					// 			</div>
+					// 		</div>
+					// 	</div>
+					// </div>';
 
 					$rows_edit = "";
 					$rows_edit .= "
